@@ -4,6 +4,7 @@ use App\Http\Controllers\Api\ArtikelController;
 use App\Http\Controllers\Api\LoginController;
 use App\Http\Controllers\Api\ProfileController;
 use App\Http\Controllers\Api\RegisterController;
+use App\Http\Controllers\Api\SamarindaController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -26,3 +27,5 @@ Route::post('/register', RegisterController::class)->name('register');
 Route::post('/login', LoginController::class)->name('login');
 Route::apiResource('profile', ProfileController::class);
 Route::apiResource('artikels', ArtikelController::class);
+Route::get('/berita-luar', [SamarindaController::class, 'semuaBerita']);
+Route::get('/berita-luar/{id}', [SamarindaController::class, 'detailBerita']);
